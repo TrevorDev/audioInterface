@@ -1,0 +1,13 @@
+{
+	"name": "audio",
+	"description": "interface",
+	"version": "0.0.1",
+	"engines": {
+	    "node": "v0.10.x",
+	    "npm":  "1.x.x"
+  	},
+	"private": true,
+	"dependencies": {
+		"alsa": "0.0.1"
+	}
+}
