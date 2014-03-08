@@ -14,7 +14,7 @@ var alsa = require('alsa'),
 var capture = new alsa.Capture(device, channels, rate, format, access, latency);
 capture.on('data', function(chunk) {
 	var buckets = []
-	var sections = 32;
+	var sections = 64;
 	for(var i = 0;i<sections;i++){
 		buckets[i]={count: 0, range: (32768/sections)*(i+1)};
 	}
@@ -38,9 +38,9 @@ capture.on('data', function(chunk) {
 		}
 	}
 	//console.log(win);
-	// if(win>6){
-	// 	console.log("hit")
-	// }
+	if(win>50){
+		console.log("hit")
+	}
 	var out = "";
 	for(var i =0;i<win;i++){
 		out+="||"
